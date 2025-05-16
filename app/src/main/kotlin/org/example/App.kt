@@ -95,8 +95,12 @@ fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<St
 
 // Etapa 4
 fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>): String {
-    // Implementar aquí
-    return ""
+    val boletin = mutableMapOf<String, Double>()
+    for (i in materias.indices){
+        boletin.put (materias[i], notas [i])
+    }
+    val resultado = "Estudiante: $nombre materias: $boletin"
+    return resultado
 }
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
