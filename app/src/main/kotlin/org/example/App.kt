@@ -82,8 +82,15 @@ fun calcularPromedioCurso(notas: List<Double>): Double {
 }
 
 fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<String> {
-    // Implementar aquí
-    return emptyList()
+    val resultados = mutableListOf<String>()
+    for (i in notas.indices) {
+        if (notas[i] >= 7) {
+            val valorCorrespondiente = nombres[i]
+            println("El alumno $valorCorrespondiente esta aprobado con: ${notas[i]}")
+            resultados.add(valorCorrespondiente)
+        }
+    }
+    return resultados
 }
 
 // Etapa 4
