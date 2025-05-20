@@ -104,16 +104,19 @@ fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>):
 }
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    return notas.max()
 }
 
 fun obtenerNotaMasBaja(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    return notas.min()
 }
 
 fun contarAprobados(notas: List<Double>): Int {
-    // Implementar aquí
-    return 0
+    var aprobados = 0
+    for (nota in notas) {
+        if (nota >= 7.0) {
+        aprobados++
+        }
+    }
+    return aprobados
 }
