@@ -54,54 +54,69 @@ fun main() {
 
 // Etapa 1
 fun calcularPromedio(nota1: Double, nota2: Double): Double {
-    // Implementar aquí
-    return 0.0
+    var promedio = (nota1+nota2) / 2
+    return promedio
 }
 
 fun esAprobado(nota: Double): Boolean {
-    // Implementar aquí
-    return false
+    if (nota < 6) {
+        return false
+    }
+    return true
 }
 
 // Etapa 2
 fun calcularPromedioTresNotas(nota1: Double, nota2: Double, nota3: Double): Double {
-    // Implementar aquí
-    return 0.0
+    var promedio = (nota1+nota2+nota3) / 3
+    return promedio
 }
 
 fun obtenerEstadoAlumno(nombre: String, apellido: String, nota: Double): String {
-    // Implementar aquí
-    return ""
+    val estado = if (nota < 6) "El alumno $nombre $apellido está desaprobado" else "El alumno $nombre $apellido está aprobado"
+    return estado
 }
 
 // Etapa 3
 fun calcularPromedioCurso(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    return notas.average()
 }
 
 fun obtenerAlumnosAprobados(nombres: List<String>, notas: List<Double>): List<String> {
-    // Implementar aquí
-    return emptyList()
+    val resultados = mutableListOf<String>()
+    for (i in notas.indices) {
+        if (notas[i] >= 7) {
+            val valorCorrespondiente = nombres[i]
+            println("El alumno $valorCorrespondiente esta aprobado con: ${notas[i]}")
+            resultados.add(valorCorrespondiente)
+        }
+    }
+    return resultados
 }
 
 // Etapa 4
 fun generarBoletin(nombre: String, materias: List<String>, notas: List<Double>): String {
-    // Implementar aquí
-    return ""
+    val boletin = mutableMapOf<String, Double>()
+    for (i in materias.indices){
+        boletin.put (materias[i], notas [i])
+    }
+    val resultado = "Estudiante: $nombre materias: $boletin"
+    return resultado
 }
 
 fun obtenerNotaMasAlta(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    return notas.max()
 }
 
 fun obtenerNotaMasBaja(notas: List<Double>): Double {
-    // Implementar aquí
-    return 0.0
+    return notas.min()
 }
 
 fun contarAprobados(notas: List<Double>): Int {
-    // Implementar aquí
-    return 0
+    var aprobados = 0
+    for (nota in notas) {
+        if (nota >= 7.0) {
+        aprobados++
+        }
+    }
+    return aprobados
 }
